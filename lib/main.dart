@@ -120,12 +120,11 @@ class CommitContainer extends StatelessWidget {
               color: const Color.fromRGBO(36, 39, 51, 1),
               borderRadius: BorderRadius.circular(10)),
           width: 345,
-          height: 150,
           child: Row(
             children: <Widget>[
               Column(children: <Widget>[
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 25, 0, 15),
+                    padding: const EdgeInsets.fromLTRB(10, 20, 0, 15),
                     child: Container(
                         width: 300,
                         child: Text('Message: ${commitObject.commit!.message}',
@@ -134,7 +133,7 @@ class CommitContainer extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15)))),
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 20),
+                    padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
                     child: Container(
                         width: 300,
                         child: Text(
@@ -144,7 +143,7 @@ class CommitContainer extends StatelessWidget {
                           textAlign: TextAlign.start,
                         ))),
                 Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 4, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(10, 4, 0, 20),
                     child: Container(
                         width: 300,
                         child: Text(

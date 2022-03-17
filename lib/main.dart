@@ -59,7 +59,7 @@ class _CommitListState extends State<CommitList> {
   List<CommitObject> commitObject = [];
   Future<List<CommitObject>> fetchCommits() async {
     var response = await http.get(Uri.parse(
-        'https://api.github.com/repos/randyrosario06/cinefilia/commits'));
+        'https://api.github.com/repos/randyrosario06/my_commits/commits'));
     if (response.statusCode == 200) {
       var responseJson = json.decode(response.body);
 

@@ -159,8 +159,8 @@ class Tree {
 class Verification {
   bool? verified;
   String? reason;
-  Null? signature;
-  Null? payload;
+  String? signature;
+  String? payload;
 
   Verification({this.verified, this.reason, this.signature, this.payload});
 

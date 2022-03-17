@@ -10,8 +10,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -45,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
+//WIDGET TO PRESENT A LIST OF CommitContainer
 class CommitList extends StatefulWidget {
   const CommitList({Key? key}) : super(key: key);
 
@@ -57,12 +56,12 @@ class _CommitListState extends State<CommitList> {
       RefreshController(initialRefresh: false);
 
   List<CommitObject> commitObject = [];
+  //FUNCTION TO GET COMMITS FROM REPOSITORY
   Future<List<CommitObject>> fetchCommits() async {
     var response = await http.get(Uri.parse(
         'https://api.github.com/repos/randyrosario06/my_commits/commits'));
     if (response.statusCode == 200) {
       var responseJson = json.decode(response.body);
-
       setState(() {
         commitObject = responseJson
             .map((movieFileJson) => CommitObject.fromJson(movieFileJson))
@@ -107,6 +106,7 @@ class _CommitListState extends State<CommitList> {
   }
 }
 
+//WIDGET TO CONTAIN COMMIT INFO IN CARD STYLE
 class CommitContainer extends StatelessWidget {
   CommitObject commitObject;
   CommitContainer({Key? key, required this.commitObject}) : super(key: key);
